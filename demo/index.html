@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My QRCode Reader</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="./mytools.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/6.4.0/adapter.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://johnnywang1994.github.io/cdn/instascan.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h3 class="ta-c">QRcode Reader</h3>
+      <ul>
+        <li v-for="camera in cameras" @click.stop="selectCamera(camera)">{{ formatName(camera.name) }}</li>
+      </ul>
+      <div id="scanner-container" style="max-width: 600px;margin: auto;">
+        <video id="preview" style="width:100%;height:auto;"></video>
+      </div>
+    </div>
+
+    <script src="./index.js" async defer></script>
+  </body>
+</html>
